@@ -1,6 +1,6 @@
 import React from 'react'
 
-const layout = () => {
+const textarea = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const layout = () => {
   )
 }
 
-export default layout
+export default textarea

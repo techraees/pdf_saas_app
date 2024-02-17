@@ -1,6 +1,6 @@
 import React from 'react'
 
-const layout = () => {
+const ChatWrapper = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const layout = () => {
   )
 }
 
-export default layout
+export default ChatWrapper
