@@ -1,11 +1,16 @@
-import React from 'react'
+"use client";
 
-const page = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+import { useRouter, useSearchParams } from "next/navigation";
 
-export default page
+const AuthCallback = async () => {
+  const router = useRouter();
+
+  const searchParams = useSearchParams();
+  const origin = searchParams.get("origin");
+  console.log(origin, "ASDASDADSAAAAAAAAAAAAAAAAAAAAAA");
+
+  return <div>{origin}</div>;
+};
+
+
+export default AuthCallback
