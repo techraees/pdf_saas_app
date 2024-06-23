@@ -20,6 +20,7 @@ export default function RootLayout({ children }) {
         )}
       >
         {/* <Toaster /> */}
+
         <Navbar />
 
         {children}
