@@ -1,3 +1,4 @@
+'use client'
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import UpgradeButton from "@/components/UpgradeButton";
 import { buttonVariants } from "@/components/ui/button";
@@ -10,53 +11,19 @@ import {
 import { ArrowRight, Check, HelpCircle, Minus } from "lucide-react";
 import Link from "next/link";
 import axios from "axios";
-  
-const Page = () => {
+
+const Pricing = () => {
   // Dummy user object for local development
   const user = {
     isLoggedIn: false, // Assuming user is not logged in initially
   };
 
   // Dummy plans data (replace with your actual data structure)
-  const dummyPlans = [
+  const pricingItems = [
     {
-      slug: "free",
+      plan: "Free",
+      tagline: "For small side projects.",
       quota: 10,
-      price: {
-        amount: 0,
-      },
-    },
-    {
-      slug: "pro",
-      quota: 100, // Example quota for Pro plan
-      price: {
-        amount: 10, // Example price for Pro plan
-      },
-    },
-  ];
-
-  const fetchUser = async () => {
-    try {
-      // Simulate user fetching with Axios
-      const response = await axios.get("/api/user"); // Replace '/api/user' with your actual API endpoint
-      return response.data;
-    } catch (error) {
-      console.error("Error fetching user:", error);
-      return null;
-    }
-  };
-
-  const pricingItems = dummyPlans.map(({ slug, quota }) => {
-    const plan = slug.charAt(0).toUpperCase() + slug.slice(1);
-    const price = dummyPlans.find((p) => p.slug === slug)?.price.amount || 0;
-
-    return {
-      plan,
-      tagline:
-        slug === "free"
-          ? "For small side projects."
-          : "For larger projects with higher needs.",
-      quota,
       features: [
         {
           text: "5 pages per PDF",
@@ -71,16 +38,54 @@ const Page = () => {
         },
         {
           text: "Higher-quality responses",
-          footnote: "Better algorithmic responses for enhanced content quality",
-          negative: slug === "free", // Example condition for negative feature
+          footnote:
+            "Better algorithmic responses for enhanced content quality",
+          negative: true,
         },
         {
           text: "Priority support",
-          negative: slug === "free", // Example condition for negative feature
+          negative: true,
         },
       ],
-    };
-  });
+    },
+    {
+      plan: "Pro",
+      tagline: "For larger projects with higher needs.",
+      quota: 100,
+      features: [
+        {
+          text: "25 pages per PDF",
+          footnote: "The maximum amount of pages per PDF-file.",
+        },
+        {
+          text: "16MB file size limit",
+          footnote: "The maximum file size of a single PDF file.",
+        },
+        {
+          text: "Mobile-friendly interface",
+        },
+        {
+          text: "Higher-quality responses",
+          footnote:
+            "Better algorithmic responses for enhanced content quality",
+        },
+        {
+          text: "Priority support",
+        },
+      ],
+    },
+  ];
+
+  // Function to fetch user data (simulated with Axios)
+  const fetchUser = async () => {
+    try {
+      const response = await axios.get("/api/user"); // Replace with your actual API endpoint
+      return response.data;
+    } catch (error) {
+      console.error("Error fetching user:", error);
+      return null;
+    }
+  };
 
   return (
     <>
@@ -116,7 +121,7 @@ const Page = () => {
                   </h3>
                   <p className="text-gray-500">{tagline}</p>
                   <p className="my-5 font-display text-6xl font-semibold">
-                    ${price}
+                    ${pricingItems.find((p) => p.plan === plan)?.price || 0}
                   </p>
                   <p className="text-gray-500">per month</p>
                 </div>
@@ -210,4 +215,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default Pricing;

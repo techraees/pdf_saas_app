@@ -5,6 +5,7 @@ import { buttonVariants } from "@/components/ui/button";
 import Image from "next/image";
 import ProductPreview from "@/public/dashboard-preview.jpg";
 import FileUploadPreview from "@/public/file-upload-preview.jpg";
+import Pricing from "./pricing/page";
 
 export default function Home() {
   return (
@@ -158,6 +159,9 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* Add the Pricing Section */}
+      <Pricing/>
     </>
   );
 }

@@ -5,6 +5,8 @@ import { buttonVariants } from "./ui/button";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 import MobileNav from "./MobileNav";
 import UserAccountNav from "./UserAccountNav";
+import Image from "next/image";
+import PDFIcon from "@/public/pdfIcon.png";
 
 const getKindeServerSession = () => {
   return {
@@ -26,9 +28,12 @@ const Navbar = () => {
     <nav className="sticky h-14 inset-x-0 top-0 z-30 w-full border-b border-gray-200 bg-white/75 backdrop-blur-lg transition-all">
       <MaxWidthWrapper>
         <div className="flex h-14 items-center justify-between border-b border-zinc-200">
-          <Link href="/" className="flex z-40 font-semibold">
-            <span>rpdf.</span>
-          </Link>
+          <div className="flex gap-2 items-center " >
+          <Image src={PDFIcon} alt="PDF ICON" width={28} height={28} />
+            <Link href="/" className="flex z-40 font-semibold">
+              <span>rpdf.</span>
+            </Link>
+          </div>
 
           <MobileNav isAuth={!!user} />
 
