@@ -1,15 +1,14 @@
 "use client";
+
 import db from "@/utils/db";
-import { getUserSubscriptionPlan } from "@/lib/stripe";
 import { notFound, redirect } from "next/navigation";
 import PdfRenderer from "@/components/PdfRenderer";
 import ChatWrapper from "@/components/chat/ChatWrapper";
-import { useEffect, useState } from "react";
 import axios from "axios";
+import { useState } from "react";
 
-const DashboardWithPdf = async ({ params }) => {
-  const [selectedfile, setSelectedfile] = useState(null);
-
+const DashboardWithPdf = ({ params }) => {
+  const [selectedFile, setSelectedFile] = useState(null);
   const { fileid } = params;
 
   // Dummy user data
@@ -23,7 +22,7 @@ const DashboardWithPdf = async ({ params }) => {
   // Dummy file data
   const file = {
     id: fileid,
-    url: selectedfile,
+    url: "https://localhost:3000/Raees Resume CV.pdf",
   };
 
   if (!file) {
@@ -36,21 +35,26 @@ const DashboardWithPdf = async ({ params }) => {
     isSubscribed: true, // Dummy subscription status
   };
 
-
   return (
     <>
       <div className="flex-1 justify-between flex flex-col h-[calc(100vh-3.5rem)]">
         <div className="mx-auto w-full max-w-8xl grow lg:flex xl:px-2">
           {/* Left sidebar & main wrapper */}
+
           <div className="flex-1 xl:flex">
             <div className="px-4 py-6 sm:px-6 lg:pl-8 xl:flex-1 xl:pl-6">
               {/* Main area */}
-              {selectedfile && <PdfRenderer url={file.url} />}
+              <input
+                type="file"
+                placeholder="Choose pdf"
+                onChange={(e) => setSelectedFile(e.target.files)}
+              />
+              {selectedFile && <PdfRenderer url={selectedFile[0]} />}
             </div>
           </div>
 
           <div className="shrink-0 flex-[0.75] border-t border-gray-200 lg:w-96 lg:border-l lg:border-t-0">
-            {/* <ChatWrapper isSubscribed={plan.isSubscribed} fileId={file.id} /> */}
+            <ChatWrapper isSubscribed={true} fileId={file.id} />
           </div>
         </div>
       </div>
