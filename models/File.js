@@ -1,6 +1,15 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
+// Define the UploadStatus enum
+const UploadStatus = {
+  PENDING: "PENDING",
+  PROCESSING: "PROCESSING",
+  FAILED: "FAILED",
+  SUCCESS: "SUCCESS",
+};
+
+
 // Define the File schema
 const fileSchema = new Schema(
   {

@@ -1,27 +1,17 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 const { Schema } = mongoose;
-
-// Define the UploadStatus enum
-const UploadStatus = {
-  PENDING: "PENDING",
-  PROCESSING: "PROCESSING",
-  FAILED: "FAILED",
-  SUCCESS: "SUCCESS",
-};
 
 // Define the User schema
 const userSchema = new Schema({
-  id: { type: String, unique: true, required: true },
   email: { type: String, unique: true, required: true },
-  uploadStatus: {
-    type: String,
-    enum: Object.values(UploadStatus),
-    default: "PENDING",
-  },
+  phone: { type: String, required: true },
   stripeCustomerId: { type: String, unique: true, sparse: true },
   stripeSubscriptionId: { type: String, unique: true, sparse: true },
   stripePriceId: { type: String, sparse: true },
   stripeCurrentPeriodEnd: { type: Date, sparse: true },
+  password: { type: String, required: true },
+  resetPasswordToken: { type: String, sparse: true },
+  resetPasswordExpires: { type: Date, sparse: true },
 });
 
-export default mongoose.model("User", userSchema);
+export default mongoose.models.User || mongoose.model("User", userSchema);
