@@ -7,7 +7,7 @@ import ChatWrapper from "@/components/chat/ChatWrapper";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const page = async ({ params }) => {
+const DashboardWithPdf = async ({ params }) => {
   const [selectedfile, setSelectedfile] = useState(null);
 
   const { fileid } = params;
@@ -67,4 +67,4 @@ const page = async ({ params }) => {
   );
 };
 
-export default page;
+export default DashboardWithPdf;
