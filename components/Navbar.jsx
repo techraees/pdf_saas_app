@@ -1,6 +1,6 @@
 import * as React from "react";
 import Link from "next/link";
-import { buttonVariants } from "./ui/button";
+import { buttonVariants } from "./ui/Button";
 // import { AiOutlineArrowRight } from "react-icons/ai";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 import MobileNav from "./MobileNav";

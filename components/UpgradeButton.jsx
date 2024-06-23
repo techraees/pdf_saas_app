@@ -1,5 +1,5 @@
 import { ArrowRight } from 'lucide-react';
-import { Button } from './ui/button';
+import { Button } from './ui/Button';
 import axios from 'axios'; // Import axios for HTTP requests
 
 const UpgradeButton = () => {

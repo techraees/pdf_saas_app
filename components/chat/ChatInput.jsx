@@ -2,8 +2,8 @@
 
 import React, { useContext, useRef } from "react";
 import { Send } from "lucide-react";
-import { Button } from "../ui/button";
-import { Textarea } from "../ui/textarea";
+import { Button } from "../ui/Button";
+import { Textarea } from "../ui/Textarea";
 import { ChatContext } from "./ChatContext";
 
 const ChatInput = ({ isDisabled }) => {

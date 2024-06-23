@@ -3,8 +3,8 @@ import {
   Dialog,
   DialogContent,
   DialogTrigger,
-} from './ui/dialog';
-import { Button } from './ui/button';
+} from './ui/Dialog';
+import { Button } from './ui/Button';
 import { Expand, Loader2 } from 'lucide-react';
 import SimpleBar from 'simplebar-react';
 import { Document, Page } from 'react-pdf';

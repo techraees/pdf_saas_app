@@ -13,7 +13,7 @@ import {
 import Skeleton from 'react-loading-skeleton';
 import Link from 'next/link';
 import { format } from 'date-fns';
-import { Button } from './ui/button';
+import { Button } from './ui/Button';
 
 const Dashboard = ({ subscriptionPlan }) => {
   const [currentlyDeletingFile, setCurrentlyDeletingFile] = useState(null);

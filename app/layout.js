@@ -1,12 +1,12 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components";
 import { cn, constructMetadata } from "@/lib/utils";
 
 import "react-loading-skeleton/dist/skeleton.css";
 import "simplebar-react/dist/simplebar.min.css";
 import Footer from "@/components/Footer";
-import { Toaster } from "@/components/ui/toaster";
+import { Toaster } from "@/components/ui/Toaster";
+import Navbar from "@/components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 

@@ -4,7 +4,7 @@ import ChatInput from "./ChatInput";
 import Messages from "./Messages";
 import Link from "next/link";
 import { ChevronLeft, Loader2, XCircle } from "lucide-react";
-import { buttonVariants } from "../ui/button";
+import { buttonVariants } from "../ui/Button";
 import { ChatContextProvider } from "./ChatContext";
 import React from "react";
 

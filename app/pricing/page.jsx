@@ -1,13 +1,13 @@
 'use client'
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import UpgradeButton from "@/components/UpgradeButton";
-import { buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/Button";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
+} from "@/components/ui/Tooltip";
 import { ArrowRight, Check, HelpCircle, Minus } from "lucide-react";
 import Link from "next/link";
 import axios from "axios";

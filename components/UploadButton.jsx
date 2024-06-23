@@ -3,12 +3,12 @@ import {
   Dialog,
   DialogContent,
   DialogTrigger,
-} from './ui/dialog';
-import { Button } from './ui/button';
+} from './ui/Dialog';
+import { Button } from './ui/Button';
 
 import Dropzone from 'react-dropzone';
 import { Cloud, File, Loader2 } from 'lucide-react';
-import { Progress } from './ui/progress';
+import { Progress } from './ui/Progress';
 import { useToast } from './ui/use-toast';
 import axios from 'axios'; // Import axios for HTTP requests
 import { useRouter } from 'next/navigation';
