@@ -36,16 +36,7 @@ const DashboardWithPdf = async ({ params }) => {
     isSubscribed: true, // Dummy subscription status
   };
 
-  const fetchPDF = async () => {
-    const res = await axios.get("http://localhost:3000/thumbnail.png");
-    console.log(
-      res,
-      "PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP"
-    );
-  };
-  useEffect(() => {
-    fetchPDF();
-  }, []);
+
   return (
     <>
       <div className="flex-1 justify-between flex flex-col h-[calc(100vh-3.5rem)]">
